@@ -1,20 +1,20 @@
-const AddTopic = () => {
+const EditTopicForm = () => {
   return (
     <form className='flex flex-col gap-3'>
-      <input
+        <input
         className='border border-slate-500 px-8 py-2 rounded-lg'
         type='text' placeholder='Topic Title'
-      />
-      
-      <input
+        />
+        
+        <input
         className='border border-slate-500 px-8 py-2 rounded-lg'
         type='text' placeholder='Topic Description'
         />
-      <button className='bg-green-600 font-bold text-white rounded-lg py-3 px-6 w-fit'>
-        Save Topic
-      </button>
+        <button className='bg-green-600 font-bold text-white rounded-lg py-3 px-6 w-fit'>
+        Update Topic
+        </button>
     </form>
   )
 }
 
-export default AddTopic;
+export default EditTopicForm;

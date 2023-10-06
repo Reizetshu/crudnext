@@ -7,7 +7,7 @@ const NavBar = () => {
         <Link className='text-white font-bold' href={'/'}>
             Simple Topic
         </Link>
-        <Link className='bg-white p-2 rounded' href={'/addTopic'}>
+        <Link className='bg-white p-2 rounded font-bold' href={'/addTopic'}>
             Add Topic
         </Link>
     </nav>
