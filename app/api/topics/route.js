@@ -16,7 +16,6 @@ export const GET = async () => {
 };
 
 export const DELETE = async (request) => {
-    await connectMongoDB();
     const id = request.nextUrl.searchParams.get('id');
     await connectMongoDB();
     await Topic.findByIdAndDelete(id);
