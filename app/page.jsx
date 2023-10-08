@@ -3,7 +3,8 @@ import TopicsList from '@/components/TopicsList';
 const Home = () => {
   return (
     <main>
-      <TopicsList/>
+      {/* <TopicsList/> */}
+      hello
     </main>
   )
 };
