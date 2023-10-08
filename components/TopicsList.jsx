@@ -30,11 +30,11 @@ const TopicsList = async () => {
         {topics.map((t) => (
         <div className='p-4 border border-slate-300 rounded-lg my-3 
             flex justify-between gap-5 items-start'>
-            <div>
-                <h2 key={t._id} className='font-bold text-2xl'>
+            <div key={t._id}>
+                <h2 className='font-bold text-2xl'>
                     {t.title}
                 </h2>
-                <h2 key={t._id}>
+                <h2>
                     {t.description}
                 </h2>
             </div>
