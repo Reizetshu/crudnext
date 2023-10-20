@@ -1,3 +1,4 @@
+// Using 'use client' for front-end to you react js
 'use client'
 
 import { useState } from 'react';
@@ -5,9 +6,11 @@ import { useRouter } from 'next/navigation';
 
 const EditTopicForm = ({id, title, description}) => {
 
+  // Update states
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
 
+  // Initialized useRouter
   const router = useRouter();
 
   const newTitleHandler = (e) => {
@@ -22,6 +25,7 @@ const EditTopicForm = ({id, title, description}) => {
     e.preventDefault();
 
     try {
+      // Updating the topics
       const res = await fetch(`/api/topics/${id}`, {
         method: 'PUT',
         headers: {
@@ -34,7 +38,9 @@ const EditTopicForm = ({id, title, description}) => {
         throw new Error('Failed to update topic');
       }
 
+      // Refreshing the page
       router.refresh();
+      // redirecting to the main page
       router.push('/');
     } catch (error) {
       console.log(error);

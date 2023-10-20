@@ -2,7 +2,10 @@ import Link from 'next/link';
 import RemoveBtn from './RemoveBtn';
 import {HiPencilAlt} from 'react-icons/hi'
 
+// Getting topics
 const getTopics = async () => {
+    
+    // Website URL
     const apiUrl = process.env.API_URL;
 
     try {
@@ -10,6 +13,7 @@ const getTopics = async () => {
             cache: 'no-store',
         });
 
+        // Failed to fetch topics
         if (!res.ok) {
             throw new Error('Failed to fetch topics');
         }
@@ -27,6 +31,7 @@ const TopicsList = async () => {
 
   return (
     <>
+        {/* Displaying topics using map */}
         {topics.map((t) => (
         <div className='p-4 border border-slate-300 rounded-lg my-3 
             flex justify-between gap-5 items-start'>

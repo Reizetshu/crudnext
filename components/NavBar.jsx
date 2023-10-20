@@ -1,3 +1,4 @@
+// Link is like an 'a tag'
 import Link from 'next/link';
 
 const NavBar = () => {

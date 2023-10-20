@@ -11,10 +11,12 @@ const RemoveBtn = ({id}) => {
     const confirmed = confirm('Are you sure?');
 
     if (confirmed) {
+      // Deleting Topic
       const res = await fetch(`/api/topics/?id=${id}`, {
         method: 'DELETE',
       });
 
+      // Refreshing the page
       if (res.ok) {
         router.refresh();
       }

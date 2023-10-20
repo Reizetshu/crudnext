@@ -5,9 +5,11 @@ import { useRouter } from 'next/navigation';
 
 const AddTopic = () => {
 
+  // Adding states
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
+  // Initialize useRouter
   const router = useRouter();
 
   const titleHandler = (e) => {
@@ -21,12 +23,14 @@ const AddTopic = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
+    // Validation if title and description is not empty
     if (!title || !description) {
       alert('Title and description are required.');
       return;
     };
 
     try {
+      // Adding topic
       const res = await fetch('/api/topics', {
         method: 'POST',
         headers: {
@@ -36,7 +40,9 @@ const AddTopic = () => {
       });
 
       if (res.ok) {
+        // Refreshing page
         router.refresh();
+        // Rerouting to the main page
         router.push('/');
       }
       else {
